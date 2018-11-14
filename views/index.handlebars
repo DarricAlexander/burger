@@ -1,0 +1,56 @@
+<div class="all">
+  <div class="jumbotron" id="jumbo">
+    <h1>Yum Yum</h1>
+    <img src="./assets/img/kawaiiBurger.jpg" alt="burger image">
+    <h1>Burgers</h1>
+  </div>
+
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-md">
+        <h2>CLICK ON A BURGER TO DEVOUR IT!</h2>
+      </div>
+      <div class="col-md">
+        <h2>DEVOURED BURGERS</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md">
+        {{!-- shows burgers yet to be devoured, clickable button --}} {{#each burgers}} {{#unless this.devoured}}
+        <div>
+          <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+            <button type="submit" class='burgerND'>{{this.burger_name}}</button>
+          </form>
+        </div>
+        {{/unless}} {{/each}}
+      </div>
+
+      <div class="col-md">
+        {{!-- shows all burgers that have been devoured, not clickable --}} {{#each burgers}} {{#if this.devoured}}
+        <div class='burgerD'>
+          <div>
+            {{this.burger_name}}
+          </div>
+        </div>
+        {{/if}} {{/each}}
+      </div>
+    </div>
+  </div>
+  <br>
+  <h2>Add A Burger!</h2>
+
+  {{!-- form for user to enter new burger --}}
+  <div class="row">
+    <div class="col-md">
+      <form action="/burgers" method="POST">
+        <input type="text" id="name" name="burger_name" placeholder="Enter Desired Burger!">
+        <button type="submit" class="burgerBTN">Add Burger</button>
+      </form>
+    </div>
+  </div>
+  <br>
+  <br>
+  <footer>Enjoy! &copy; Darric Alexander 2018</footer>
+</div>
