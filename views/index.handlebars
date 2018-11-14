@@ -18,7 +18,7 @@
 
     <div class="row">
       <div class="col-md">
-        {{!-- shows burgers yet to be devoured, clickable button --}} {{#each burgers}} {{#unless this.devoured}}
+    {{#each burgers}} {{#unless this.devoured}}
         <div>
           <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
             <button type="submit" class='burgerND'>{{this.burger_name}}</button>
@@ -28,7 +28,7 @@
       </div>
 
       <div class="col-md">
-        {{!-- shows all burgers that have been devoured, not clickable --}} {{#each burgers}} {{#if this.devoured}}
+       {{#each burgers}} {{#if this.devoured}}
         <div class='burgerD'>
           <div>
             {{this.burger_name}}
@@ -41,7 +41,7 @@
   <br>
   <h2>Add A Burger!</h2>
 
-  {{!-- form for user to enter new burger --}}
+ 
   <div class="row">
     <div class="col-md">
       <form action="/burgers" method="POST">
