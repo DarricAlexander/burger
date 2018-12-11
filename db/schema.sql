@@ -1,9 +1,6 @@
-CREATE DATABASE JawsDB;
-
-USE JawsDB;
-
 CREATE TABLE burgers (
-    id INTEGER(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    burger_name VARCHAR(30) NOT NULL,
-    devoured BOOLEAN NOT NULL
-);
+    id int NOT NULL AUTO_INCREMENT,
+    burger_name VARCHAR(255) NOT NULL,
+    devoured BOOL DEFAULT false,
+    PRIMARY KEY (id)
+)

@@ -1,4 +1,4 @@
-USE JawsDB;
+USE burgers_db;
 
 INSERT INTO burgers
 SET burger_name = 'The Original', devoured = 0;
